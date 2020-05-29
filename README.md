@@ -2,21 +2,23 @@
 In order to develop effective crowdsourcing aggregation methods for multiple choice question answering(MCQA) and evaluate them empirically, we developed and deployed a crowdsourced system for playing the “Who wants to be a millionaire?” quiz show. This repository includes our dataset in csv and sql formats. Note that, as question and answer texts are originally in Turkish you should use UTF8 format at all times to avoid encoding problems.
 
 # Citation
-Please cite this publication http://research.microsoft.com/en-us/um/beijing/events/ms_ipsn13/papers/aydin.pdf 
+Please cite this publication http://onlinelibrary.wiley.com/doi/10.1002/cpe.4168/full
 
 Sample citation formats:
 - Harvard
-Aydin, B.I., Yilmaz, Y.S., Bulut, M.F. and Demirbas, M., Crowdreply: A crowdsourced multiple choice question answering system. In ACM/IEEE IPSN (Vol. 13).
-
-- MLA
-Aydin, Bahadir Ismail, et al. "Crowdreply: A crowdsourced multiple choice question answering system." ACM/IEEE IPSN. Vol. 13.
+Aydin BI, Yilmaz YS, Demirbas M. A crowdsourced “Who wants to be a millionaire?” player. Concurrency Computat.: Pract. Exper. 2017;e4168. https://doi.org/10.1002/cpe.4168
 
 - BibTex entry
-@inproceedings{aydin13crowdreply,
-  title={Crowdreply: A crowdsourced multiple choice question answering system},
-  author={Aydin, Bahadir Ismail and Yilmaz, Yavuz Selim and Bulut, Muhammed Fatih and Demirbas, Murat},
-  booktitle={ACM/IEEE IPSN},
-  volume={13}
+@article {CPE:CPE4168,
+  author = {Aydin, Bahadir Ismail and Yilmaz, Yavuz Selim and Demirbas, Murat},
+  title = {A crowdsourced “Who wants to be a millionaire?” player},
+  journal = {Concurrency and Computation: Practice and Experience},
+  issn = {1532-0634},
+  url = {http://dx.doi.org/10.1002/cpe.4168},
+  doi = {10.1002/cpe.4168},
+  pages = {e4168--n/a},
+  keywords = {crowdsourcing, multiple-choicem, question answering},
+  note = {e4168 cpe.4168},
 }
 
 # Data
@@ -65,7 +67,7 @@ Following 3 tables are holding information about questions shown on TV live and 
 - user_id: The foreign key from the User table.
 - question_id: The foreign key from the Question table.
 - choice: The choice of the user who is identified by user_id for the question which is identified by question_id.
-- confidence: The sureness level of the user while answering. Don't mix it with statistical confidence.
+- confidence: The sureness level of the user while answering. Don't mix it with statistical confidence. Note that, the confidence labels "certain", "guessing" and "no idea" are mapped to 1, 2 and 3 respectively. 
 - time: Server timestamp of the answer arrival. Recommended to ignore.
 - receivedTime: Timestamp recorded on Android device at the time user sees the question. 
 - answerTime: Timestamp recorded on Andorid device at the time user answers. 
